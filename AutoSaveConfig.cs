@@ -1,4 +1,4 @@
-﻿using Rocket.API;
+using Rocket.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +11,22 @@ namespace educatalan02.AutoSaveKingModdingNetwork
     public class AutoSaveConfig : IRocketPluginConfiguration
 
     {
-        public float SaveInterval;
+        public float SaveVehiclesInterval;
+        public float SaveServerInterval;
         public string Color;
-        public string SaveMsg;
+        public bool SaveServerEnabled;
+        public bool SaveVehiclesEnabled;
+        public string SaveServerMsg;
+        public string SaveVehiclesMsg;
 
         public void LoadDefaults()
         {
-            SaveMsg = "Server saving...";
-            SaveInterval = 600f; 
+            SaveServerMsg = "Saving Server...";
+            SaveVehiclesMsg = "Saving Vehicles...";
+            SaveServerEnabled = true;
+            SaveVehiclesEnabled = true;
+            SaveServerInterval = 600f;
+            SaveVehiclesInterval = 600f;
             Color = "yellow";
         }
     }
